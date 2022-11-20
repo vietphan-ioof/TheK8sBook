@@ -6,9 +6,9 @@ metadata:
     app: initializer
 spec:
   initContainers:
-  - name: init-ctr
-    image: busybox
-    command: ['sh', '-c', 'until nslookup k8sbook; do echo waiting for k8sbook service; sleep 1; done; echo Service found!']
+    - name: init-ctr
+      image: busybox
+      command: ['sh', '-c', 'until nslookup k8sbook; do echo waiting for k8sbook service; sleep 1; done; echo Service found!']
   containers:
     - name: web-ctr
       image: nigelpoulton/web-app:1.0
